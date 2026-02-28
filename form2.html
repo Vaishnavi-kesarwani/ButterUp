@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auth Page</title>
+<link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+<div class="container">
+<div class="form-box">
+
+<h1 id="title">Sign Up</h1>
+
+<form id="authForm">
+
+<div class="input-group">
+
+<div class="input-field" id="namefield">
+<input type="text" placeholder="Name" id="name">
+</div>
+
+<div class="input-field">
+<input type="email" placeholder="Email" id="email" required>
+</div>
+
+<div class="input-field">
+<input type="password" placeholder="Password" id="password" required>
+</div>
+
+<p>Lost password <a href="#">Click Here!</a></p>
+
+</div>
+
+<div class="btn-field">
+<button type="submit" id="signupbtn">Sign Up</button>
+<button type="submit" class="disable" id="signinbtn">Sign In</button>
+
+</div>
+
+</form>
+</div>
+</div>
+
+<script>
+
+let signupbtn = document.getElementById("signupbtn");
+let signinbtn = document.getElementById("signinbtn");
+let namefield = document.getElementById("namefield");
+let title = document.getElementById("title");
+let isSignIn = false;
+
+
+// SWITCH MODE
+signinbtn.onclick = function(){
+    isSignIn = true;
+    namefield.style.maxHeight ="0";
+    title.innerHTML="Sign In";
+}
+
+signupbtn.onclick = function(){
+    isSignIn = false;
+    namefield.style.maxHeight ="60px";
+    title.innerHTML="Sign Up";
+}
+
+
+// FORM SUBMIT
+document.getElementById("authForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+
+    // SIGN UP
+    if(!isSignIn){
+
+        localStorage.setItem("userData",
+            JSON.stringify({name,email,password})
+        );
+
+        alert("Signup Successful!");
+    }
+
+    // SIGN IN
+    else{
+
+        const saved = JSON.parse(localStorage.getItem("userData"));
+
+        if(saved && saved.email===email && saved.password===password){
+            alert("Login Successful!");
+            window.location.href="index.html";
+        }
+        else{
+            alert("Invalid Email or Password");
+        }
+    }
+
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+.bestsellers{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.bestsellerimage{
+    display: flex;
+    
+}
+.besttext{
+    display: flex;
+}
+h2{
+    padding: 20px;
+    padding-left: 0;
+    color: #3C0753;
+}
+.bestimages{
+    height:250px;
+    width: 230px;
+}
+li{
+    list-style: none;
+    
+}
+.ulbest{
+    display: inline-flex;
+}
+.box1 .box2 .box3 .box4{
+    height: 500px;
+    margin: 20px;
+    
+    
+}
+.box1{
+    background:lightcoral;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.box2{ 
+    background-color: lightcoral;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.box3{ 
+    background-color:lightcoral;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.box4{ 
+    background-color:lightcoral;
+    margin-left: 0;
+    margin-right: 10px;
+}
+.button2{
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+.button1{   
+    background-color:red; 
+    align-self:flex-start;
+    text-decoration-color: antiquewhite;
+    border: 0;
+    height: 30px;
+    width:150px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: black;
+}
+h4{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+    font-size: 20px;
+}
+h5{
+    text-decoration: line-through;
+    font-size: 15px;
+}
